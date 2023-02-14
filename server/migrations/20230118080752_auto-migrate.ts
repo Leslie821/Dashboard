@@ -24,15 +24,6 @@ export async function up(knex: Knex): Promise<void> {
     });
   }
 
-  // if (!(await knex.schema.hasTable('department_relation'))) {
-  //   await knex.schema.createTable('department_relation', table => {
-  //     table.increments('id')
-  //     table.integer('father_department_id').unsigned().notNullable().references('department.id')
-  //     table.integer('child_department_id').unsigned().notNullable().references('department.id')
-  //     table.timestamps(false, true)
-  //   })
-  // }
-
   if (!(await knex.schema.hasTable('users'))) {
     await knex.schema.createTable('users', (table) => {
       table.increments('id');
@@ -131,14 +122,6 @@ export async function up(knex: Knex): Promise<void> {
     });
   }
 
-  // if (!(await knex.schema.hasTable('claim_type'))) {
-  //   await knex.schema.createTable('claim_type', (table) => {
-  //     table.increments('id');
-  //     table.string('type', 255).notNullable();
-  //     table.timestamps(false, true);
-  //   });
-  // }
-
   if (!(await knex.schema.hasTable('claim_request'))) {
     await knex.schema.createTable('claim_request', (table) => {
       table.increments('id');
@@ -150,10 +133,6 @@ export async function up(knex: Knex): Promise<void> {
         .references('users.id');
       table.string('type');
       table.string('date');
-      // .integer('claim_type')
-      // .unsigned()
-      // .notNullable()
-      // .references('claim_type.id');
       table.integer('amount').notNullable();
       table.string('remark', 1000).notNullable();
       table.string('status');

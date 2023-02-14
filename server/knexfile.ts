@@ -1,5 +1,3 @@
-// import * as dotenv from 'dotenv';
-// dotenv.config();
 import type { Knex } from 'knex';
 
 require('dotenv').config()

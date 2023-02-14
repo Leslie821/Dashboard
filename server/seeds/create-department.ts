@@ -41,7 +41,7 @@ export async function seed(knex: Knex): Promise<void> {
       gender: '女',
       name: 'admin',
       email: 'admin@gmail.com',
-      address: 'フクオカケン, キタキュウシュウシトバタク, トバタ, 226-1162',
+      address: 'address, 226-1162',
       job_nature: 'boss',
       password: await hashPassword('admin'),
       birthday: '1993-08-16',
@@ -56,36 +56,6 @@ export async function seed(knex: Knex): Promise<void> {
       job_title_id: 1,
       department_id: 1,
     },
-    // {
-    //   gender: '女',
-    //   name: 'manager',
-    //   email: 'manger@gmail.com',
-    //   address: 'フクオカケン, キタキュウシュウシトバタク, トバタ, 226-1162',
-    //   job_nature: 'av女優',
-    //   password: await hashPassword('!TEK-067'),
-    //   birthday: '1993-08-16',
-    //   employ_date: '2009-03-01',
-    //   working_time: '0900-1200',
-    //   salary: 1000000,
-    //   annual_leave_fixed: 365,
-    //   sick_leave_fixed: 200,
-    //   bank_account: '84-58-88',
-    //   phone: 12345678,
-    //   access_level_id: 2,
-    //   job_title_id: 1,
-    //   department_id: 1,
-    // },
   ]);
 
-  // await knex('claim_request').insert([
-  //   {
-  //     staff_id: 2,
-  //     approved_staff_id: 1,
-  //     type: 'food',
-  //     date: '2023',
-  //     amount: 100,
-  //     remark: 'dinner',
-  //     status: 'pending',
-  //   },
-  // ]);
 }
